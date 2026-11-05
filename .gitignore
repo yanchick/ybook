@@ -1,0 +1,35 @@
+# Secrets and local state
+.env
+.env.*
+!.env.example
+data/
+out/
+*.epub
+
+# Cookies used by yt-dlp
+cookies.txt
+cookies*.txt
+*.cookies.txt
+cookies/
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
