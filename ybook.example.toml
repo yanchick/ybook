@@ -1,0 +1,44 @@
+# Copy to ybook.toml and edit. Relative paths are resolved from this file's directory.
+
+channel = "https://www.youtube.com/@example"
+
+[paths]
+data_dir = "data"
+output_dir = "out"
+
+[youtube]
+api_key_env = "YOUTUBE_API_KEY"
+
+[transcripts]
+languages = ["en"]            # priority list; default English
+provider = "auto"             # auto | youtube-transcript-api | yt-dlp
+cookies_from_browser = ""     # e.g. "firefox"; empty = disabled
+workers = 3
+sleep_requests = 1.0
+timeout_seconds = 180
+
+[llm]
+enabled = true                # false = copy transcripts unchanged; no LLM calls, no annotations
+base_url = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+model = "gpt-4.1-mini"
+temperature = 0.2
+max_tokens = 8192
+max_words_per_chunk = 2500
+annotation_max_words = 12000
+workers = 3
+timeout_seconds = 180
+max_tokens_param = "max_tokens"  # or "max_completion_tokens"
+input_cost_per_million = 0.0
+output_cost_per_million = 0.0
+# extra_headers = { "X-Title" = "ybook" }
+
+[book]
+title = ""                    # empty => channel title
+author = ""                   # empty => channel title
+language = "en"
+description = ""              # empty => channel description
+group_by_playlist = true      # nested TOC by playlists; false => one chronological part
+include_shorts = true
+include_live = true
+annotations = true
